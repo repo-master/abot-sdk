@@ -1,10 +1,12 @@
 
 import os
+from contextlib import suppress
 
 from setuptools import find_packages, setup
 
 # Package meta-data.
 NAME = 'abot-sdk'
+PACKAGE_VERSION = '0.1.1'
 DESCRIPTION = 'SDK for Abot fulfillments using FastAPI'
 URL = 'https://github.com/repo-master/abot-api-sdk'
 EMAIL = 'repomaster@phaidelta.com'
@@ -18,16 +20,14 @@ REQUIRED = [
 
 
 long_desc = DESCRIPTION
-try:
-    BASEPATH = os.path.abspath(os.path.dirname(__file__))
+BASEPATH = os.path.abspath(os.path.dirname(__file__))
+with suppress(FileNotFoundError):
     with open(os.path.join(BASEPATH, 'README.md'), encoding='utf-8') as f:
         long_desc = f.read()
-except FileNotFoundError:
-    pass
 
 setup(
     name=NAME,
-    version="0.1.0",
+    version=PACKAGE_VERSION,
     description=DESCRIPTION,
     long_description=long_desc,
     packages=find_packages(),
