@@ -3,8 +3,6 @@ import os
 
 from setuptools import find_packages, setup
 
-from abot_sdk.__version__ import __version__ as VERSION
-
 # Package meta-data.
 NAME = 'abot-sdk'
 DESCRIPTION = 'SDK for Abot fulfillments using FastAPI'
