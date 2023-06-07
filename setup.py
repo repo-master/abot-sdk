@@ -29,7 +29,7 @@ except FileNotFoundError:
 
 setup(
     name=NAME,
-    version=VERSION,
+    version="0.1.0",
     description=DESCRIPTION,
     long_description=long_desc,
     packages=find_packages(),
